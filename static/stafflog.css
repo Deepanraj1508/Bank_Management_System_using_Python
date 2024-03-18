@@ -1,0 +1,94 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  min-height: 85vh; /* Set minimum height to the viewport height */
+  background-color: #dfab808a;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.705);
+  padding: 25px;
+  border-radius: 21px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 7%;
+  width: 25%;
+  height: 310px;
+}
+
+
+
+h2 {
+  margin-top: auto;
+  color:  #ff7300;
+  text-align: center;
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for labels */
+label {
+  display: block; /* Display labels as blocks to stack them vertically */
+  margin-bottom: 5px; /* Add some space below each label */
+  font-weight: bold; /* Make labels bold, adjust as needed */
+  font-size: 14px;
+  color: #ffffffda;
+}
+
+/* Style for input fields */
+input[type="text"],
+input[type="password"] {
+  width: 90%; /* Make input fields full width */
+  padding: 8px; /* Add some padding inside input fields */
+  margin-bottom: 10px; /* Add some space below each input field */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Add some border radius for rounded corners */
+}
+
+/* Style for input fields on focus */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #ff7300; /* Change border color on focus */
+}
+
+button {
+  background-color: #ff7300;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+
+}
+
+button:hover {
+  background-color: #ff7300;
+}
+
+
+.sign-txt {
+  margin-bottom: 5px;
+  margin-top: 10px; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+  color: white; /* Adjust text color as needed */
+}
+
+.sign-txt a {
+  color: #ff7300; /* Adjust link color as needed */
+  text-decoration: none;
+}
+
+.sign-txt a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

@@ -1,0 +1,149 @@
+<!--18SOECE11014-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="logo/favicon1.png"/>
+		<title>Sign Up</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-select-country.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='StaffRegForm.css') }}">
+
+    </head>
+	<body class="bg-img">
+		<div class="registration-form">
+			<form class="A1" action="/register  " method="post">
+				<div class="registration-logo with-border">
+					<h1 style="font-size: 30px; color: #ff7300"><b>Sign Up</b></h1>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" id="fname" name="fname" class="form-control item" placeholder="First name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" id="lname" name="lname" class="form-control item" placeholder="Last name" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div>
+							<input type="email" id="email" name="email" class="form-control item" placeholder="Enter Email" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" id="username" name="username" class="form-control item" placeholder="User Name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="password" id="password" name="password" class="form-control item" placeholder="Confirm Password" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<select id="gender" name="gender" class="form-control item" required>
+                                <option value="" selected disabled>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <!-- Add more options as needed -->
+                            </select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="date" id="bod" name="bod" class="form-control item" placeholder="Date of Birth" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+                        <div class="form-group">
+                            <select id="education" name="education" class="form-control item" required>
+                                <option value="" selected disabled>Select Educational Background</option>
+                                <option value="ug">UG</option>
+                                <option value="pg">PG</option>
+                                <option value="phd">Phd</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    </div>
+                    
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="number" id="phone" name="phone" class="form-control item" placeholder="Phone Number" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" id="address" name="address" class="form-control item" placeholder="Address" required>
+						</div>
+					</div>
+                    <div class="col-md-6">
+						<div class="form-group">
+							<input type="number" id="experience" name="experience" class="form-control item" placeholder="Years of Experience" required>
+						</div>
+					</div>
+					<!-- <div class="col-md-6">
+						<div class="form-group">
+							<input type="file" id="pf" name="pf" placeholder="Upload Profile Picture" >
+							<label for="pf">Upload Profile Picture</label>
+						</div>
+					</div> -->
+				</div>
+				<!-- <div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<textarea class="form-control item" placeholder="Enter Note."></textarea>
+						</div>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-md-12">
+						<center>
+						<button type="submit" name="submit" class="btn btn-block login-button" >Register</button>
+						</center>
+					</div>
+				</div>
+				<div class="form-group">
+					<a href="{{ url_for('login') }}" class="text-center signup-btn" style="text-decoration: none;">
+						<h4 id="A3" style="font-size: 16px; color: #ff7300"><b>I already have a Register</b></h4>
+					</a>
+				</div>
+				
+                
+			</form>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+		<script src="js/script.js"></script>
+		<script type="text/javascript">
+			$("[type=file]").on("change", function(){
+			// Name of file and placeholder
+			var file = this.files[0].name;
+			var dflt = $(this).attr("placeholder");
+			if($(this).val()!=""){
+				$(this).next().text(file);
+			} else {
+				$(this).next().text(dflt);
+			}
+			});
+		</script>
+		<!-- <script type="text/javascript" src="js/bootstrap-select-country.min.js"></script> -->
+	</body>
+</html>
+<!--18SOECE11014-->

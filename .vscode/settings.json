@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "localhost",
+            "database": "${workspaceFolder:Bank_Management}/instance/site.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

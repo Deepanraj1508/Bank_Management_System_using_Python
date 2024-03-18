@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stafflog.css') }}">
+  <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/icon2.png') }}">
+  <title>Login Form</title>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method="post">
+      <label for="username">User Name</label>
+      <input type="text" id="username" name="username" placeholder="Username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" required>
+
+      <div class="sign-txt">Not yet a member? <a href="{{ url_for('register') }}">Signup now</a></div>
+      <button type="submit">Login</button>
+      <center>
+      <div class="sign-txt">Back To <a href="{{ url_for('home') }}">Home</a></div>
+     </center>
+    </form>
+  </div>
+  <!-- </header>   -->
+
+
+</body>
+
+</html>
