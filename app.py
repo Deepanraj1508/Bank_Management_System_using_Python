@@ -23,9 +23,16 @@ class BankStaff(db.Model):
     phone = db.Column(db.Integer, nullable=False)
     experience = db.Column(db.Integer, nullable=False)
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+
+#Staff Page
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -89,7 +96,31 @@ def dashboard():
     return render_template('auth/staff_home.html')
 
 
+#customer page
+
+@app.route('/customerlogin', methods=['GET', 'POST'])
+def customerlogin():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        user = BankStaff.query.filter_by(username=username).first()
+
+        if user and check_password_hash(user.password, password):
+            flash('Logged in successfully!', 'success')
+            return redirect(url_for('customerdashboard'))
+        else:
+            flash('Invalid username or password', 'error')
+
+    return render_template('auth/customerlogin.html')
+
+@app.route('/customerdashboard', methods=['GET', 'POST'])
+def customerdashboard():
+    return render_template('auth/customerdash.html')
+
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(debug=True, port='8000')
