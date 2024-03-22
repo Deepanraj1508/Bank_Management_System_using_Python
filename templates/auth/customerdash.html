@@ -137,38 +137,9 @@
                 </div>
 
                 <div class="topbar_icons">
-                    <input class="search" type="text" placeholder="Search..">
-                    <a href="#" aria-label="search things" class="topbar_icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-                            <path fill="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z" />
-                        </svg>
-                    </a>
-
-                    <a href="#" aria-label="notification bell" class="topbar_icon alert">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-                            <path fill="none" d="M0 0h24v24H0z" />
-                            <path
-                                d="M22 20H2v-2h1v-6.969C3 6.043 7.03 2 12 2s9 4.043 9 9.031V18h1v2zM5 18h14v-6.969C19 7.148 15.866 4 12 4s-7 3.148-7 7.031V18zm4.5 3h5a2.5 2.5 0 1 1-5 0z" />
-                        </svg>
-                    </a>
-                    <!-- profile button -->
-                    <div class="profile">
-                        <div class="img_with_name">
-                            <img src="./../../static/img/user-1.jpg" alt="">
-                            <div class="profile_text">
-                                <p class="name">Deepanraj</p>
-                                <p class="occupation">Bussiness</p>
-                            </div>
-                        </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="none" d="M0 0h24v24H0z" />
-                            <path class="icon" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z" />
-                        </svg>
-                    </div>
+                    <!-- <input class="search" type="text" placeholder="Search.."> -->
                     <div class="logout">
-                        <a class="logout" href="{{ url_for('index') }}">logout</a>
+                        <a class="logout" href="{{ url_for('index') }}"><img src="./../../static/customer/logout.png" alt="logout"></a>
                     </div>
 
                 </div>
@@ -205,8 +176,9 @@
                         </button>
 
                         <button class="s_analysis" aria-label="show_analysis">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="color: white;">
-                                <path fill="none" d="M0 0h24v24H0z"  />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                style="color: white;">
+                                <path fill="none" d="M0 0h24v24H0z" />
                                 <path class="icon"
                                     d="M11 .543c.33-.029.663-.043 1-.043C18.351.5 23.5 5.649 23.5 12c0 .337-.014.67-.043 1h-1.506c-.502 5.053-4.766 9-9.951 9-5.523 0-10-4.477-10-10 0-5.185 3.947-9.449 9-9.95V.542zM11 13V4.062A8.001 8.001 0 0 0 12 20a8.001 8.001 0 0 0 7.938-7H11zm10.448-2A9.503 9.503 0 0 0 13 2.552V11h8.448z" />
                             </svg>
@@ -311,39 +283,35 @@
                 <aside>
 
                     <div class="transfer_money_section">
-                        <p class="title">quick transfer</p>
+                        <center>
+                            <p class="title">Quick Transfer</p>
+                        </center>
                         <div class="button_group">
-                            <button class="via_no" aria-label="via_no">via mobile no.</button>
-                            <button class="via_ac" aria-label="via_ac">via account no.</button>
+                            <button class="via_no" aria-label="via_no">Via Mobile No.</button>
+                            <button class="via_ac" aria-label="via_ac">Via Account No.</button>
                         </div>
 
                         <form onsubmit="return mySubmitFunction(event)">
+                            <!-- Fields for transferring money via mobile number -->
                             <div class="phone_no_info">
-                                <label for="phone_no"><img src="./../../static/customer/india.png" alt="">&nbsp;+91
-                                </label>
-                                <input type="number" name="phone_no" id="phone_no" placeholder="Enter Number">
-                                <!-- <img src="./../../static/img/user-1.jpg" alt=""> -->
-                            </div>
-                            <!-- <br> -->
-                            <div class="phone_no_info">
-                                <label for="ruppes">₹</label>
-                                </label>
-                                <input type="number" name="phone_no" id="amount" placeholder="Amount">
-                                <span>INR</span>
-                                <!-- <img src="./../../static/img/user-1.jpg" alt=""> -->
+                                <input type="number" name="phone_no" id="phone_no" class="form"
+                                    placeholder="Enter Phone Number">
                             </div>
 
-                            <!-- <div class="amount">
-                                <div>
-                                    <label for="ruppes">₹</label>
-                                    <input type="number" name="phone_no" id="rupees" placeholder="Amount">
-                                </div>
-                                <span>INR</span>
-                            </div> -->
+                            <!-- Fields for transferring money via account number -->
+                            <div class="account_info" style="display: none;">
+                                <input type="text" name="account_no" id="account_no" class="form"
+                                    placeholder="Enter Account Number">
+                            </div>
 
-                            <input type="submit" value="send to john" />
+                            <div class="phone_no_info">
+                                <input type="number" name="amount" id="amount" class="form" placeholder="Amount">
+                            </div>
+
+                            <input type="submit" value="Send to John" />
                         </form>
                     </div>
+
 
                     <div class="cards">
                         <div class="title_with_button">
@@ -370,7 +338,7 @@
 
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="./../../static/customer/card1.webp" alt=""></div>
+                                <div class="swiper-slide"><img src="./../../static/customer/card1.png" alt=""></div>
                                 <div class="swiper-slide"><img src="./../../static/customer/card2.webp" alt=""></div>
                                 <div class="swiper-slide"><img src="./../../static/customer/card3.webp" alt=""></div>
                             </div>
