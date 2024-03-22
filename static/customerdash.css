@@ -9,7 +9,7 @@
     /* text color */
     --text-black: #000000;
     --text-white: #e9eafc;
-    --text-grey: #a1a3af;
+    --text-grey: #1a1919;
     --text-dark-grey: #464646;
     --text-primary: #ff5f03;
 
@@ -29,6 +29,7 @@
     box-sizing: border-box;
     text-decoration: none;
     border: none;
+    
 }
 
 ::-webkit-scrollbar {
@@ -89,7 +90,7 @@ nav {
     max-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
-    background: url('./images/bg2.png');
+    background: #dfab808a;
     background-attachment: fixed;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -225,7 +226,7 @@ a.nav_link svg .icon {
     justify-content: space-between;
     width: 91%;
     padding: 10px;
-    background: #ffffff;
+    background: #ffffff81;
     border-radius: 30px;
     transition: 1s ease;
     cursor: pointer;
@@ -301,6 +302,7 @@ section.main_content .topbar {
     align-items: center;
     justify-content: space-between;
     font-family: var(--font-poppins);
+    background: #dfab808a;
 }
 
 .topbar #menu_btn {
@@ -335,7 +337,7 @@ section.main_content .topbar {
     place-items: center;
     padding: 8px;
     border-radius: 12px;
-    background: #ffffff;
+    background: #ffffff81;
 }
 .topbar .logout{
     color: #000000;
@@ -365,6 +367,7 @@ color: white    ;
 .topbar_icons .search{
     padding: 12px;
     border-radius: 15px;    
+    background: #ffffff81;
 } 
 
 main .overview_text {
@@ -380,10 +383,11 @@ section.main_content section {
 section.main_content section main {
     width: 100%;
     padding-inline: 20px;
+    background: #dfab808a;
 }
 
 main .bank_balance_card {
-    background: #ffffff;
+    background: #ffffff81;
     padding: 24px 32px;
     display: flex;
     flex-direction: column;
@@ -527,9 +531,9 @@ main .transaction_info .transaction_date {
     display: grid;
     place-content: center;
     padding: 12px;
-    background: var(--text-white);
+    background: #ffffff81;
     border-radius: 12px;
-    box-shadow: 0px 10px 25px 2px var(--text-grey);
+    box-shadow: 0px 10px 25px 2px #4646466e;
 }
 
 .get_send_money .trasaction_details {
@@ -580,11 +584,12 @@ p.transaction_metadata>span {
 section.main_content section aside {
     padding-inline: 20px;
     font-family: var(--font-poppins);
+    background: #dfab808a;
 }
 
 aside .transfer_money_section {
     padding: 14px 24px;
-    background: #ffffff;
+    background: #ffffff81;
     border-radius: 18px;
 }
 
@@ -634,7 +639,7 @@ aside .transfer_money_section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid var(--text-grey);
+    /* border-bottom: 1px solid var(--text-grey); */
     padding-bottom: 10px;
 }
 
@@ -643,7 +648,8 @@ aside .transfer_money_section {
     align-items: center;
     justify-content: space-between;
     padding-right: 10px;
-    border-right: 2px solid var(--text-grey);
+    /* border-right: 1px solid var(--text-grey); */
+    gap: 1px;
     font-size: 14px;
 }
 
@@ -652,7 +658,10 @@ aside .transfer_money_section {
     font-size: 14px;
     padding: 8px 14px;
     border: none;
+    margin-right: 10px;
+    border-radius: 14px;
     outline: none;
+    background: #ffffff81;
     caret-color: var(--text-primary);
 }
 
@@ -668,17 +677,17 @@ form .phone_no_info label img {
     width: 20px;
 }
 
-.transfer_money_section form .phone_no_info img {
+/* .transfer_money_section form .phone_no_info img {
     width: 30px;
     border-radius: 50%;
-}
+} */
 
 form .amount {
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid var(--text-grey);
+    /* border-bottom: 2px solid var(--text-grey); */
 }
 
 .amount label {
@@ -705,7 +714,7 @@ form .amount {
 
 form input[type="submit"] {
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 10px;
     background-color: var(--btn-secondary);
     text-transform: uppercase;
@@ -724,7 +733,7 @@ form input[type="submit"]:hover {
 
 .cards {
     margin-top: 30px;
-    background: #ffffff;
+    background: #ffffff81;
     padding: 20px 20px;
     border-radius: 16px;
 }
