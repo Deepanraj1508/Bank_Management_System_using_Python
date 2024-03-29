@@ -5,7 +5,7 @@ from datetime import datetime
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static', static_folder='static')
 app.config['SECRET_KEY'] = 'your_secret_key'  # Change this to a random string
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Bank_Management.db'
 db = SQLAlchemy(app)
 
 class BankStaff(db.Model):
