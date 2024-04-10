@@ -76,7 +76,7 @@ def register():
         flash('Account created successfully!', 'success')
         return redirect(url_for('login'))
 
-    return render_template('auth/StaffRegForm.html')
+    return render_template('staff/StaffRegForm.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -93,11 +93,11 @@ def login():
         else:
             flash('Invalid username or password', 'error')
 
-    return render_template('auth/Stafflogin.html')
+    return render_template('staff/Stafflogin.html')
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    return render_template('auth/staff_home.html')
+    return render_template('staff/staff_home.html')
 
 
 #customer page
@@ -123,11 +123,11 @@ def customerlogin():
             flash('Invalid username or password', 'error')
 
 
-    return render_template('auth/customerlogin.html')
+    return render_template('customer/customerlogin.html')
 
 @app.route('/customerdashboard', methods=['GET', 'POST'])
 def customerdashboard():
-    return render_template('auth/customerdash.html')
+    return render_template('customer/customerdash.html')
 
 
 

@@ -11,7 +11,7 @@
     <meta name="description"
         content="Finpay finance dashboard. all in one. manage everything using over superfast web app">
     <meta name="keywords" content="Finpay,finance,dashboards,finance website">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="icons.svgex, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="revisit-after" content="30 days">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <!-- stlyesheet -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='customerdash.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='customer/customerdash.css') }}">
 </head>
 
 <body class="light">
@@ -108,7 +108,7 @@
 
             <!-- life cover advertisement section -->
             <div class="life_cover_offer">
-                <img src="./../../static/customer/women.svg" alt="" />
+                <img src="./../../static/img/customer/women.svg" alt="" />
                 <div class="life_cover_text">
                     <p class="title">Congratulations!</p>
                     <p class="desc">You'r eligible for instant Life cover upto 2,00,000 without any medical test for
@@ -139,7 +139,7 @@
                 <div class="topbar_icons">
                     <!-- <input class="search" type="text" placeholder="Search.."> -->
                     <div class="logout">
-                        <a class="logout" href="{{ url_for('index') }}"><img src="./../../static/customer/logout.png" alt="logout"></a>
+                        <a class="logout" href="{{ url_for('index') }}"><img src="./../../static/img/customer/logout.png" alt="logout"></a>
                     </div>
 
                 </div>
@@ -160,7 +160,7 @@
                         <div class="account_no">
                             <span>Saving A/C : <span class="no">xxxxxxx1234</span></span>
                             <button class="view_account_no" aria-label="show_ac">
-                                <img src="./../../static/customer/eye-off-line.svg" alt="">
+                                <img src="./../../static/img/customer/eye-off-line.svg" alt="">
                             </button>
                         </div>
                     </div>
@@ -338,9 +338,9 @@
 
                         <div class="swiper mySwiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="./../../static/customer/card1.png" alt=""></div>
-                                <div class="swiper-slide"><img src="./../../static/customer/card2.webp" alt=""></div>
-                                <div class="swiper-slide"><img src="./../../static/customer/card3.webp" alt=""></div>
+                                <div class="swiper-slide"><img src="./../../static/img/customer/card1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="./../../static/img/customer/card2.webp" alt=""></div>
+                                <div class="swiper-slide"><img src="./../../static/img/customer/card3.webp" alt=""></div>
                             </div>
                         </div>
                         <div class="swiper-page"></div>
@@ -373,7 +373,7 @@
     </script>
 
     <!-- script file -->
-    <script defer src="{{ url_for('static', filename='customer.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='customer/customer.js') }}"></script>
 </body>
 
 </html>
