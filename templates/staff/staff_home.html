@@ -29,12 +29,12 @@
                 </div>
             </div>
             <div class="sidebar">
-                <a href="#">
-                    <span class="material-symbols-outlined"> grid_view </span>
+                <a href="#" class="active">
+                    <span class="material-symbols-outlined" > grid_view </span>
                     <h3>Dashborad</h3>
                 </a>
 
-                <a href="#" class="active">
+                <a href="#" >
                     <span class="material-symbols-outlined"> person </span>
                     <h3>Customers</h3>
                 </a>
@@ -76,16 +76,16 @@
         </aside>
         <main>
             <h1>Dashborad</h1>
-            <div class="date">
+            <!-- <div class="date">
                 <input type="date">
-            </div>
+            </div> -->
             <div class="insights">
                 <div class="sales">
                     <span class="material-symbols-outlined">analytics</span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total salse</h3>
-                            <h1>$25.024</h1>
+                            <h3>Amount</h3>
+                            <h1>5,230,052.95</h1>
                         </div>
                         <div class="progress">
                             <div class="circle">
@@ -135,14 +135,14 @@
                 </div>
             </div>
             <div class="recent-order">
-                <h2>Recent order</h2>
+                <h2>Account Holder's Name</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>product Name</th>
-                            <th>product Number</th>
-                            <th>Payment</th>
-                            <th>status</th>
+                            <th>Name</th>
+                            <th>Account Number</th>
+                            <th>Account Type</th>
+                            <th>Active</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -243,55 +243,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="sales-analytics">
-                <h2>Sales Analytics</h2>
-                <div class="item online">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            shopping_cart
-                        </span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>OFFLINE ORDERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="success">+39%</h5>
-                        <h3>3849</h3>
-                    </div>
-                </div>
-                <div class="item offline">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            local_mall
-                        </span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>ONLINE ORDERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="danger">-17</h5>
-                        <h3>1100</h3>
-                    </div>
-                </div>
-                <div class="item customers">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            person
-                        </span>
-                    </div>
-                    <div class="right">
-                        <div class="info">
-                            <h3>NEW CUSTOMERS</h3>
-                            <small class="text-muted">Last 24 Hours</small>
-                        </div>
-                        <h5 class="success">+25%</h5>
-                        <h3>849</h3>
-                    </div>
-                </div>
-            </div>
+            </div>      
         </div>
     </div>
     <script defer src="{{ url_for('static', filename='staff/admin.js') }}"></script>

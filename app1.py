@@ -75,7 +75,7 @@ def register():
 
     return render_template('staff/StaffRegForm.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/stafflogin', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
@@ -89,7 +89,8 @@ def login():
         else:
             flash('Invalid username or password', 'error')
 
-    return render_template('staff/Stafflogin.html')
+    return render_template('staff/stafflogin.html')
+
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
@@ -123,4 +124,4 @@ def customerdashboard():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, port='8000')
+    app.run(debug=True, port='8005')
