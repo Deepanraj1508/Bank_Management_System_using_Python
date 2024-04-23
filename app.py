@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from sqlalchemy import event 
 import hashlib
 from flask_bcrypt import Bcrypt
+import random
 
 app = Flask(__name__, template_folder='templates', static_url_path='/static', static_folder='static')
 app.config['SECRET_KEY'] = 'your_secret_key'  # Change this to a random string
@@ -103,7 +105,6 @@ def dashboard():
 #customer page
 
 
-# Define a model for storing form data
 class FormData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     userid = db.Column(db.Integer, unique=True)
@@ -161,8 +162,8 @@ def before_insert_generate_user_id(mapper, connection, target):
 
 
 # Route for displaying and processing form steps
-@app.route('/', methods=['GET', 'POST'])
-def multi_step_form():
+@app.route('/customer_registration', methods=['GET', 'POST'])
+def customer_registration():
     if request.method == 'POST':
         try:
             # Convert initial_deposit_amount to float
@@ -206,34 +207,32 @@ def multi_step_form():
             )
             db.session.add(form_data)
             db.session.commit()
-            return redirect('/home')
+            flash('Account created successfully!', 'success')
+            return redirect(url_for('customerlogin'))
         except ValueError:
             # Handle error if initial_deposit_amount cannot be converted to float
             return "Invalid initial deposit amount. Please enter a valid number."
-    return render_template('index.html')
+    return render_template('customer/customerregform.html')
 
 
 @app.route('/customerlogin', methods=['GET', 'POST'])
 def customerlogin():
     if request.method == 'POST':
-        username = request.form['username']
+        userid = request.form['username']
         password = request.form['password']
 
-        user = BankStaff.query.filter_by(username=username).first()
+        # Query the database for the user
+        user = FormData.query.filter_by(userid=userid, password=password).first()
 
-        if request.method == 'POST':
-            username = request.form['username']
-            password = request.form['password']
-
-            user = BankStaff.query.filter_by(username=username).first()
-
-        if user and user.password == hashlib.sha256(password.encode()).hexdigest():
+        if user:
+            # If user exists and password matches, log in
             flash('Logged in successfully!', 'success')
             return redirect(url_for('customerdashboard'))
         else:
+            # If login fails, show error message
             flash('Invalid username or password', 'error')
 
-
+    # Render the login page template
     return render_template('customer/customerlogin.html')
 
 @app.route('/customerdashboard', methods=['GET', 'POST'])

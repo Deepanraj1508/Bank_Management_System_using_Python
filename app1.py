@@ -215,17 +215,21 @@ def customer_registration():
 @app.route('/customerlogin', methods=['GET', 'POST'])
 def customerlogin():
     if request.method == 'POST':
-        username = request.form['username']
+        userid = request.form['username']
         password = request.form['password']
 
-        user = BankStaff.query.filter_by(username=username).first()
+        # Query the database for the user
+        user = FormData.query.filter_by(userid=userid, password=password).first()
 
-        if user and check_password_hash(user.password, password):
+        if user:
+            # If user exists and password matches, log in
             flash('Logged in successfully!', 'success')
             return redirect(url_for('customerdashboard'))
         else:
+            # If login fails, show error message
             flash('Invalid username or password', 'error')
 
+    # Render the login page template
     return render_template('customer/customerlogin.html')
 
 @app.route('/customerdashboard', methods=['GET', 'POST'])
