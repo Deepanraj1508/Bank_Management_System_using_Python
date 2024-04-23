@@ -1,0 +1,396 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background: #FFB75E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ED8F03, #FFB75E);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: transparent;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: transparent;
+    border: 0 none;
+    border-radius: 60px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform .personal {
+    padding: 10px;
+    background-color: #fbfbfbe0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 15px;
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #1f1e1eb4;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    box-shadow: 35px 35px 68px 0px rgba(245, 166, 35, 0.5), inset -9px -9px 16px 0px rgba(245, 166, 35, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    font-weight: bold;
+    color: #000;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    /* background-color: #ed8f03af; */
+    /* color: #ffffff; */
+    /* box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.4); */
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    box-shadow: 35px 35px 68px 0px rgba(245, 166, 35, 0.5), inset -9px -9px 16px 0px rgba(245, 166, 35, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    box-shadow: 35px 35px 68px 0px rgba(245, 166, 35, 0.5), inset -9px -9px 16px 0px rgba(245, 166, 35, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    box-shadow: 35px 35px 68px 0px rgba(245, 166, 35, 0.5), inset -9px -9px 16px 0px rgba(245, 166, 35, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+    opacity: 0.8;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 20%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+    /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #000000;
+    color: white;
+}
+
+
+/* Not relevant to this form */
+.dme_link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.dme_link a {
+    background: #FFF;
+    font-weight: bold;
+    color: #ee0979;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 12px;
+}
+
+.dme_link a:hover,
+.dme_link a:focus {
+    background: #C5C5F1;
+    text-decoration: none;
+}
+
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.select-selected {
+    background-color: rgb(245, 118, 0);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: rgb(255, 136, 0);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.container table {
+    width: 100%;
+}
+
+td {
+    padding: 5px;
+}
+
+span {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2C3E50;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Adjust as needed */
+.select-container {
+    width: 100%;
+}
+
+/* Adjust as needed */
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Adjust as needed */
+.item {
+    background-color: #fbfbfbe0;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #f0ebeb;
+    box-sizing: border-box;
+}
+
+span {
+    border-bottom: 5px;
+}
+
+
+/* bank Preferences */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    display: flex;
+    margin-bottom: 10px;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+.account_type {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #354a5ec9;
+}
+
+#msform .account_types {
+    width: 58px;
+    height: 20px;
+    margin-top: 9px;
+    background-color: #fbfbfbe0;  
+    accent-color:  rgb(255, 94, 0);  
+
+}
+
+#msform .terms {
+    width: 18px;
+    height: 18px;
+    margin-left: 31px;
+    background-color: #fbfbfbe0; 
+    accent-color:  rgb(255, 94, 0);
+}
+
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}

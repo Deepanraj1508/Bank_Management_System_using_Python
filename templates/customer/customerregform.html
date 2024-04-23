@@ -1,0 +1,307 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='customer/regform.css') }}">
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .container table {
+            width: 100%;
+            /* Adjust the width of the table columns */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- MultiStep Form -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form id="msform" action="/submit" method="post">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Personal Details</li>
+                    <li>Banking Preferences</li>
+                    <li>Emergency Contact</li>
+                    <li>Security</li>
+                    <li>Terms and Conditions</li>
+
+                </ul>
+                <!-- fieldsets -->
+
+
+                <!-- Personal details -->
+                <fieldset>
+                    <h2 class="fs-title">Personal Details</h2>
+                    <h3 class="fs-subtitle">Tell us something more about you</h3>
+
+                    <div class="container">
+                        <table cellspacing="10">
+                            <tr>
+                                <td><span>Full Name</span><input class="personal" type="text" name="name"
+                                        placeholder="Full Name" required /></td>
+                                <td><span>Date of Birth</span><input class="personal" type="date" name="dob" required />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span>Mobile Number</span><input class="personal" type="tel" name="mob"
+                                        maxlength="10" placeholder="Mobile Number" required></td>
+                                <td><span>Permanent Address</span><input class="personal" type="text" name="add"
+                                        placeholder="Permanent Address" required></td>
+                            </tr>
+                            <tr>
+                                <td><span>Email</span><input class="personal" type="text" name="email"
+                                        placeholder="Email ID" required></td>
+                                <td><span>State</span><input class="personal" type="text" name="state"
+                                        placeholder="State" required></td>
+                            </tr>
+                            <tr>
+                                <td><span>City</span><input class="personal" type="text" name="city" placeholder="City"
+                                        required></td>
+                                <td><span>Pincode</span><input class="personal" type="number" name="pincode"
+                                        placeholder="Pincode" required></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="container">
+                        <table cellspacing="10">
+                            <tr>
+                                <td><span>Gender</span><select id="gender" name="gender" class="form-control item"
+                                        required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select></td>
+                                <td><span>Blood Group</span><select id="blood" name="blood" class="form-control item"
+                                        required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="a+">A+</option>
+                                        <option value="b+">B+</option>
+                                        <option value="o+">O+</option>
+                                        <option value="ab+">AB+</option>
+                                    </select></td>
+
+                            </tr>
+                            <tr>
+                                <td><span>Identification Type</span><select id="identification" name="identification"
+                                        class="form-control item" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="aadhar">Aadhar Card</option>
+                                        <option value="license">Driving License</option>
+                                        <option value="passport">Passport</option>
+                                        <option value="national">National ID</option>
+                                    </select></td>
+                                <td><span>Identification Number</span><input class="personal" type="number" name="id"
+                                        placeholder="Identification Number" required></td>
+                            </tr>
+                            <tr>
+                                <td><span>Education</span><select id="education" name="education"
+                                        class="form-control item" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="master">Master's</option>
+                                        <option value="bacholer">Bachelor's</option>
+                                        <option value="diploma">Diploma</option>
+                                        <option value="+2">12th</option>
+                                        <option value="10">10th</option>
+                                        <option value="other">Other</option>
+                                    </select></td>
+                                <td><span>Differently-abled</span><select id="differently_abled"
+                                        name="differently_abled" class="form-control item" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+
+
+
+
+                <!-- BANKING PREFERENCES -->
+                <fieldset>
+                    <h2 class="fs-title">BANKING PREFERENCES</h2>
+                    <h3 class="fs-subtitle">Tell us something more about you</h3>
+
+                    <div class="container">
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <span>Branch Location</span>
+                                    <input class="personal" type="text" name="branch" placeholder="Branch Location"
+                                        required />
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <span>Initial Deposit Amount</span>
+                                    <input class="personal" type="number" name="initial"
+                                        placeholder="Initial Deposit Amount" required />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="radio-group">
+                        <div class="option">
+                            <span class="title">Account Type</span>
+                            <input class="account_types" type="radio" name="account_type" value="savings">
+                            <span class="account_type">Savings</span>
+                            <input class="account_types" type="radio" name="account_type" value="current">
+                            <span class="account_type">Current</span>
+                            <input class="account_types" type="radio" name="account_type" value="fixed">
+                            <span class="account_type">Fixed</span>
+                            <input class="account_types" type="radio" name="account_type" value="salary">
+                            <span class="account_type">salary</span>
+                            <input class="account_types" type="radio" name="account_type" value="nri">
+                            <span class="account_type">NRI</span>
+                        </div>
+                    </div>
+                    <h3 class="fs-subtitle" align="left">Additional Services Required (if any): </h3>
+                    <div class="radio-group">
+                        <div class="option">
+                            <span class="title">Debit Card</span>
+                            <input class="account_types" type="radio" name="debit_card" value="yes">
+                            <span class="account_type">Yes</span>
+                            <input class="account_types" type="radio" name="debit_card" value="no">
+                            <span class="account_type">No</span>
+                            <input class="account_types" type="radio" name="debit_card" value="later">
+                            <span class="account_type">May be later</span>
+                        </div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="option">
+                            <span class="title">Credit Card</span>
+                            <input class="account_types" type="radio" name="credit_card" value="yes">
+                            <span class="account_type">Yes</span>
+                            <input class="account_types" type="radio" name="credit_card" value="no">
+                            <span class="account_type">No</span>
+                            <input class="account_types" type="radio" name="credit_card" value="later">
+                            <span class="account_type">May be later</span>
+                        </div>
+                    </div>
+                    <div class="radio-group">
+                        <div class="option">
+                            <span class="title">Online Banking</span>
+                            <input class="account_types" type="radio" name="online_banking" value="yes">
+                            <span class="account_type">Yes</span>
+                            <input class="account_types" type="radio" name="online_banking" value="no">
+                            <span class="account_type">No</span>
+                            <input class="account_types" type="radio" name="online_banking" value="later">
+                            <span class="account_type">May be later</span>
+                        </div>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+
+                <!-- EMERGENCY CONTACT (OPTIONAL) -->
+                <fieldset>
+                    <h2 class="fs-title">EMERGENCY CONTACT (OPTIONAL)</h2>
+                    <h3 class="fs-subtitle">Show Your Best</h3>
+
+                    <div class="container">
+                        <table cellspacing="10">
+                            <tr>
+                                <td><span>Father Name</span><input class="personal" type="text" name="fname"
+                                        placeholder="Father Name" /></td>
+                                <td><span>Mother Name</span><input class="personal" type="text" name="mname"
+                                        placeholder="Mother Name" /></td>
+                            </tr>
+                            <tr>
+                                <td><span>Mobile Number</span><input class="personal" type="tel" maxlength="10"
+                                        name="mob1" placeholder="Mobile Number"></td>
+                                <td><span>Permanent Address</span><input class="personal" type="text" name="add1"
+                                        placeholder="Permanent Address"></td>
+                            </tr>
+                            <tr>
+                                <td><span>Email</span><input class="personal" type="text" name="email1"
+                                        placeholder="Email ID"></td>
+                                <td><span>State</span><input class="personal" type="text" name="state1"
+                                        placeholder="State"></td>
+                            </tr>
+                            <tr>
+                                <td><span>City</span><input class="personal" type="text" name="city1"
+                                        placeholder="City"></td>
+                                <td><span>Pincode</span><input class="personal" type="number" name="pincode1"
+                                        placeholder="Pincode"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+
+
+
+                <!-- Contacts details -->
+                <fieldset>
+                    <h2 class="fs-title">Security</h2>
+                    <h3 class="fs-subtitle">(UserID automatically Generated)</h3>
+                    <div class="container">
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <span>Enter Password</span>
+                                    <input class="personal" type="password" name="pass1" placeholder="Password"
+                                        required />
+                                </td>
+                            </tr>
+                        </table>
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <span>Confirm Password</span>
+                                    <input class="personal" type="password" name="pass2"
+                                        placeholder="Password" required />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+
+                <!-- Submit -->
+                <fieldset>
+                    <h2 class="fs-title">TERMS AND CONDITIONS</h2>
+                    <h3 class="fs-subtitle">Submit</h3>
+                    <div class="container">
+                        <input class="terms" type="checkbox" name="agree" value="yes" required>
+                        <span>By signing this form, I acknowledge that I have read and agree to abide by the terms and
+                            conditions set forth by the bank.</span>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <!-- /.MultiStep Form -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- jQuery easing plugin (secure) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='customer/regform.js') }}"></script>
+
+
+</body>
+
+</html>
